@@ -12,8 +12,11 @@ var Database = "home-sensor-array";
 var Username = "root";
 var PassWord = "root";
 ```
-Create a div inside your html page where id="gauge-id" and create
-a new object inside the gauges object as follows:
+Create a div in your html page as follows at minimum:
+```
+<div id="gauge-id" class="200x160px"></div>
+```
+create a new object inside the gauges object as follows:
 
 ```
 var gauges = {
