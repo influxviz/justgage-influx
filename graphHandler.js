@@ -99,7 +99,7 @@ var sendQueries = function() {
 	}
 };
 
-
+setInterval(function() {sendQueries();}, 1500);
 
 /*
 TODO: second page with a graph and a widget handler.
