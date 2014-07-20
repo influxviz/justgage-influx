@@ -23,7 +23,8 @@ var gauges = {
 								title: "Room Humidity %",
 								gaugeWidthScale: 0.7,
 								labelFontColor : "#000000",
-								titleFontColor: "#000000"
+								titleFontColor: "#000000",
+								relativeGaugeSize: true
 							}),
 
 		query: "select humidity from humidity-sensor"
@@ -40,11 +41,12 @@ var gauges = {
 								title: "Room Temperature Celcius",
 								gaugeWidthScale: 0.7,
 								labelFontColor: "#000000",
-								titleFontColor: "#000000"
+								titleFontColor: "#000000",
+								relativeGaugeSize: true
 							}),
 
 		query: "select temp from temp-sensor"
-	},
+	}, 
 
 
 
@@ -57,7 +59,8 @@ var gauges = {
 								title: "Electricty Cost $",
 								gaugeWidthScale: 0.7,
 								labelFontColor : "#000000",
-								titleFontColor: "#000000"
+								titleFontColor: "#000000",
+								relativeGaugeSize: true
 							}),
 
 		query: "select cost from electricity-cost"
@@ -99,7 +102,12 @@ var sendQueries = function() {
 	}
 };
 
-setInterval(function() {sendQueries();}, 1500);
+
+$(document).ready(function(){
+	var queryInterval = setInterval(function() {sendQueries();}, 1500);
+});
+
+
 
 /*
 TODO: second page with a graph and a widget handler.

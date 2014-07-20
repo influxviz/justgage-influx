@@ -16,12 +16,13 @@
 
 	<body onload="sendQueries();">
 		
+		<div id="title-header">
+			<span>Home Analytics Dashboard</span>
+		</div>
 
-		<div id="page-container">
+		<div id="wrapper">
 
-			<div id="title-header">
-				<span>Home Analytics Dashboard</span>
-			</div>
+
 			
 			<div id="sidebar-container">
 				<ul class="sidebar-nav">
@@ -34,31 +35,20 @@
 				</ul>
 			</div>
 
-			<div id="page-content">
-				<div class="container-fluid">
-					<div class="row">
-						<div id="indoor-stats" class="col-xs-10 stats-container">
-							<div id="humidity-gauge" class="200x160px col-xs-3 gauge"></div>
-							<div id="temp-gauge" class="200x160px col-xs-3 gauge"></div>
-							<div id="electr-gauge" class="200x160px col-xs-3 gauge"></div>
-						</div>
-
-						<div id="garden-stats" class="col-xs-10 stats-container">
-							<div id="indoor-penta-graph"></div>
-							</div>
-						</div>
-					</div>
+			<div class="page-container inset">
+				<div class="row">
+					<div id="humidity-gauge" class="col-md-4 gauge"></div>
+					<div id="temp-gauge" class="col-md-4 gauge"></div>
+					<div id="electr-gauge" class="col-md-4 gauge"></div>
 				</div>
 			</div>
-
-
-			
 		</div>
+		
 		<!-- scripts -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="justGage.1.0.1/resources/js/raphael.2.1.0.min.js"></script>
-		<script type="text/javascript" src="justGage.1.0.1/resources/js/justgage.1.0.1.min.js"></script>
+		<script type="text/javascript" src="justGage.1.0.1/resources/js/justgage.1.0.1.js"></script>
 		<script type="text/javascript" src="graphHandler.js"></script>
 	</body>
 </html>
