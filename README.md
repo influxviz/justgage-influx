@@ -5,15 +5,18 @@ How to:
 =======
 The graphHandler.js script contains an interface to creating the gauges.
 
-first you'll want to enter the credentials of your database where you see:
+First you'll want to enter the credentials of your database where you see:
 ```
 var Hostname = "http://162.243.57.240:8086"; //Make sure no forward slash procedes the hostname.
 var Database = "home-sensor-array";
 var Username = "root";
 var PassWord = "root";
 ```
-Create a div inside your html page where id="gauge-id" and create
-a new object inside the gauges object as follows:
+Create a div in your html page as follows at minimum:
+```
+<div id="gauge-id" class="200x160px"></div>
+```
+Create a new object inside the gauges object as follows:
 
 ```
 var gauges = {
