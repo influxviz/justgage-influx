@@ -102,9 +102,28 @@ var sendQueries = function() {
 	}
 };
 
+var checkSidebarRetract = function() {
+	if($(window).width() < 700)
+	{
+		$("#wrapper").css({"padding-left":"0"});
+	}
+	else
+	{
+		$("#wrapper").css({"padding-left":"250px"});
+	}
+};
+
+var initPage = function() {
+	checkSidebarRetract();
+	sendQueries();
+};
 
 $(document).ready(function(){
 	var queryInterval = setInterval(function() {sendQueries();}, 1500);
+
+	$(window).resize(function(){
+		checkSidebarRetract();
+	});
 });
 
 
