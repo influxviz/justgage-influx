@@ -3,8 +3,9 @@
 <html>
 	<html lang="en">
 	  <head>
-	  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<meta name="influxDBCredentials" content="databaseIP: 162.243.57.240; port: 8086; database: home-sensor-array; username: root; password: root;">
+		
 		<title>
 			Home Analytics
 		</title>
@@ -14,7 +15,7 @@
 		<link rel="stylesheet" href="assets/styles.css">
 	</head>
 
-	<body onload="initPage();">
+	<body>
 		
 		<div id="title-header">
 			<span>Home Analytics Dashboard</span>
@@ -26,8 +27,8 @@
 			
 			<div id="sidebar-container">
 				<ul class="sidebar-nav">
-					<li><a href="#" onclick="">Indoor Environment Stats</a></li>
-					<li><a href="#" onclick="">Garden Soil Stats</a></li>
+					<li><a href="#">Indoor Environment Stats</a></li>
+					<li><a href="#">Garden Soil Stats</a></li>
 					<li><a href="#">Stats Button 3</a></li>
 					<li><a href="#">Stats Button 4</a></li>
 					<li><a href="#">Stats Button 5</a></li>
@@ -37,9 +38,18 @@
 
 			<div class="page-container inset">
 				<div class="row">
-					<div id="humidity-gauge" class="col-md-4 gauge"></div>
-					<div id="temp-gauge" class="col-md-4 gauge"></div>
-					<div id="electr-gauge" class="col-md-4 gauge"></div>
+					<div id="humidity-gauge" class="col-md-4 gauge">
+						<meta content="influxValue: humidity; influxTimeSeries: humidity-sensor; min: 0; max: 100; title: Room Humidity %;">
+					</div>
+
+					<div id="temp-gauge" class="col-md-4 gauge">
+						<meta content="influxValue: temp; influxTimeSeries: temp-sensor; min: -60; max: 80; title: Room Temperature Celcius;">
+					</div>
+					
+					<div id="electr-gauge" class="col-md-4 gauge">
+							<meta content="influxValue: cost; influxTimeSeries: electricity-cost; min: 0; max: 300; title: Electricty Cost $;">
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -49,6 +59,6 @@
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="justGage.1.0.1/resources/js/raphael.2.1.0.min.js"></script>
 		<script type="text/javascript" src="justGage.1.0.1/resources/js/justgage.1.0.1.js"></script>
-		<script type="text/javascript" src="graphHandler.js"></script>
+		<script type="text/javascript" src="influxDBGauge.js"></script>
 	</body>
 </html>
