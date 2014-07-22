@@ -12,6 +12,8 @@ First you'll want to enter the credentials inside a metatag like so:
 ```
 
 Create a div in your html page with a meta-tag inside it containing the gauges configuration as follows:
+Note: The div MUST HAVE an id associated with it or the gauge will not shop up.
+
 ```
 <div id="gauge-id" class="gauge">
   <meta content="influxValue: value; influxTimeSeries: sensor; min: 0; max: 100; title: awesome gauge example;">
