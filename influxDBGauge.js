@@ -148,38 +148,8 @@ $(document).ready(function(){
 	var gauges = createGaugeObjects();
 	var credentials = getDatabaseCredentials();
 
-	checkSidebarRetract();
 	sendQueries(gauges, credentials);
-
-	$(window).resize(function(){
-		checkSidebarRetract();
-	});
-
 	
 	var queryInterval = setInterval(function() {sendQueries(gauges, credentials);}, 1500);
 });
 
-
-
-
-
-
-
-
-
-/*
-TODO: second page with a graph and a widget handler.
-
-var widgets = ["#indoor-stats", "#garden-stats"];
-
-var activeWidget = widgets[0];
-
-var swapWidgets = function(widgetNumber) {
-	var num = (widgetNumber > widgets.length - 1) ? widgets.length - 1 : widgetNumber;
-
-	$(activeWidget).slideUp("slow",function(){
-		activeWidget = widgets[widgetNumber]
-		$(activeWidget).slideDown();
-	});
-}
-*/
