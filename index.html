@@ -17,9 +17,7 @@
 
 	<body>
 		
-		<div id="title-header">
-			<span>Home Analytics Dashboard</span>
-		</div>
+
 
 		<div id="wrapper">
 
@@ -35,21 +33,26 @@
 					<li><a href="#">Stats Button 6</a></li>
 				</ul>
 			</div>
+		
+		<div id="title-header">
+			<span>Home Analytics Dashboard</span>
+		</div>
 
-			<div class="page-container inset">
-				<div class="row">
-					<div id="humidity-gauge" class="col-md-4 gauge">
-						<meta content="influxValue: humidity; influxTimeSeries: humidity-sensor; min: 0; max: 100; title: Room Humidity %;">
-					</div>
+			<div id="page-container">
+				<div class="container-fluid">
+					<div class="row">
+						<div id="humidity-gauge" class="col-md-4 gauge">
+							<meta content="influxValue: humidity; influxTimeSeries: humidity-sensor; min: 0; max: 100; title: Room Humidity %;">
+						</div>
 
-					<div id="temp-gauge" class="col-md-4 gauge">
-						<meta content="influxValue: temp; influxTimeSeries: temp-sensor; min: -60; max: 80; title: Room Temperature Celcius;">
+						<div id="temp-gauge" class="col-md-4 gauge">
+							<meta content="influxValue: temp; influxTimeSeries: temp-sensor; min: -60; max: 80; title: Room Temperature Celcius;">
+						</div>
+						
+						<div id="electr-gauge" class="col-md-4 gauge">
+								<meta content="influxValue: cost; influxTimeSeries: electricity-cost; min: 0; max: 300; title: Electricty Cost $;">
+						</div>
 					</div>
-					
-					<div id="electr-gauge" class="col-md-4 gauge">
-							<meta content="influxValue: cost; influxTimeSeries: electricity-cost; min: 0; max: 300; title: Electricty Cost $;">
-					</div>
-
 				</div>
 			</div>
 		</div>
@@ -60,6 +63,26 @@
 		<script type="text/javascript" src="justGage.1.0.1/resources/js/raphael.2.1.0.min.js"></script>
 		<script type="text/javascript" src="justGage.1.0.1/resources/js/justgage.1.0.1.js"></script>
 		<script type="text/javascript" src="influxDBGauge.js"></script>
-		<script type="text/javascript" src="pageFormatter.js"></script>
+		
+		<script type="text/javascript">
+			var checkSidebarRetract = function() {
+				if($(window).width() < 700)
+				{
+					$("#wrapper").css({"padding-left":"0"});
+				}
+				else
+				{
+					$("#wrapper").css({"padding-left":"250px"});
+				}
+			};
+
+			$(document).ready(function() {
+				checkSidebarRetract();
+				
+				$(window).resize(function(){
+					checkSidebarRetract();
+				});
+			});
+		</script>
 	</body>
 </html>

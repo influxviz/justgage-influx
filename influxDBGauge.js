@@ -131,16 +131,7 @@ var sendQueries = function(gauges, credentials) {
 	}
 };
 
-var checkSidebarRetract = function() {
-	if($(window).width() < 700)
-	{
-		$("#wrapper").css({"padding-left":"0"});
-	}
-	else
-	{
-		$("#wrapper").css({"padding-left":"250px"});
-	}
-};
+
 
 
 
