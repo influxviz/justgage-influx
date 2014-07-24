@@ -20,6 +20,11 @@ body {
 	font-size: 3.5em; 
 }
 
+#title-header span {
+	position:relative; 
+	left: 80px;
+}
+
 #sidebar-container {
 	position: fixed;
 	margin-left: -250px;
